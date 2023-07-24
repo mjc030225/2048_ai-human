@@ -15,4 +15,4 @@ For convenience, we downloaded both the jquery library and the handlebars librar
 ~~~python
 pip install -r requirements.txt
 ~~~
-
+如果遇到卡住的情况，不是程序问题、在于文件的权重调整不够仔细，没有找出最优解。
