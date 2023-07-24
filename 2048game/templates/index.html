@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2048 Game</title>
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename = 'style.css') }}">
+</head>
+<body>
+  <script src="../templates/jquery-3.6.0.min.js" ></script>
+  <div class="container">
+    <h1>2048
+    </h1>
+    <div class="score">Score: <span id="score">{{score}}</span></div>
+    <div class="grid-container">
+      {% for row in data %}
+      <div class="grid-row">
+          {% for num in row %}
+        <div class="grid-cell">{{num}}</div>
+          {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <form method="post" action="/new-mode">
+    <label for="game-mode">Select Game Mode:</label>
+    <select id="game-mode" name="mode">
+      <option value="human">human</option>
+      <option value="ai">ai</option>
+    </select>
+    </form>
+      <button id="new-game-btn",>New Game</button>
+
+
+  </div>
+
+  <script src="../templates/script.js" href= "{{ url_for('static', filename = 'script.css') }}"></script>
+
+
+</body>
+</html>
