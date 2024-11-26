@@ -1,65 +1,110 @@
-body {
+  body {
     background-color: #f8f8f8;
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
   }
-
+  
   .container {
     background-color: #bbada0;
-    border-radius: 6px;
-    padding: 20px;
-    width: 400px;
+    border-radius: 10px;
+    padding: 40px 20px;
+    width: 450px;
     margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
-
+  
   h1 {
     color: #776e65;
-    font-size: 48px;
-    margin: 10px 0;
+    font-size: 60px;
+    margin: 20px 0;
   }
-
+  
   .score {
     color: #776e65;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
-
+  
   .grid-container {
     background-color: #cdc1b4;
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
   }
-
+  
   .grid-row {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
   }
-  #game-mode {
-    margin-bottom: 10px;
-  }
+  
   .grid-cell {
-    background-color: #ccc0b3;
-    border-radius: 3px;
-    width: 80px;
-    height: 80px;
+    background-color: #eee4da;
+    border-radius: 5px;
+    width: 90px;
+    height: 90px;
     margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 32px;
     color: #776e65;
-    border: 4px solid #cdc1b4;
+    font-weight: bold;
+    border: 3px solid #b5a58d;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
   }
-
+  .grid-cell[data-value=""] { background-color: #776e65; color: #cdc1b4; }
+  .grid-cell[data-value="2"] { background-color: #eee4da; color: #776e65; }
+  .grid-cell[data-value="4"] { background-color: #ede0c8; color: #776e65; }
+  .grid-cell[data-value="8"] { background-color: #f2b179; color: white; }
+  .grid-cell[data-value="16"] { background-color: #f59563; color: white; }
+  .grid-cell[data-value="32"] { background-color: #f67c5f; color: white; }
+  .grid-cell[data-value="64"] { background-color: #f65e3b; color: white; }
+  .grid-cell[data-value="128"] { background-color: #edcf72; color: white; }
+  .grid-cell[data-value="256"] { background-color: #edcc61; color: white; }
+  .grid-cell[data-value="512"] { background-color: #edc850; color: white; }
+  .grid-cell[data-value="1024"] { background-color: #edc53f; color: white; }
+  .grid-cell[data-value="2048"] { background-color: #edc22e; color: white; }
+  
   button {
     background-color: #8f7a66;
     border: none;
     color: #f9f6f2;
     font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px 30px;
+    border-radius: 6px;
     cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #7a6f59;
+  }
+  
+  #game-mode {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .grid-cell.move-animation {
+    animation: moveAnimation 0.3s ease-in-out;
+  }
+  
+  @keyframes moveAnimation {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
